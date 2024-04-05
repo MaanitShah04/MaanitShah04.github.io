@@ -1,10 +1,10 @@
-## Markov Decision Processes
+# Markov Decision Processes
 
 **Reinforcement Learning** is a sub-domain of machine learning where a learner called an agent interacts with its surroundings called environment. In return, the environment provides rewards and a new state determined by the actions of the agent.
 
 ---
 
-### The Agent–Environment Interface
+## The Agent–Environment Interface
 
 > The learner and decision-maker is called the **agent**.
 > The thing it interacts with, comprising everything outside the agent, is called the **environment**.
@@ -17,7 +17,7 @@ The state of the environment encompasses all the information that may be useful 
 
 This distinction between what the agent knows and what it can control is a critical concept in reinforcement learning. An agent may have a thorough understanding of the problem domain, much like a human who knows the rules of solving a Rubik's cube but still struggles actually to find the optimal solution. The agent-environment relationship, therefore, represents the fundamental limitations on the agent's control rather than just the limitations on its knowledge.
 
-### The Markov Property
+## The Markov Property
 
 > "The future is independent of the past given the future."
 
@@ -29,4 +29,18 @@ Mathematically, the **Markov property** can be expressed as,
 P[S_{t+1} | S_{t}] = P[S_{t+1} | S_{1}, ..., S_{t}]
 ```
 
-### Markov Decision Processes
+### Markov Processes
+
+A **Markov Process** is a memoryless random process, i.e. a sequence of random states $S_{1}, S_{2}, ...$ with the Markov property. A Markov Process can be represented as a tuple <$S $, _P_>, where $S$ is a finite set of states and _P_ is the transition state probability matrix, _P_<sub>$ss'$</sub> $= P[S_{t+1} = s' | S_{t} = s]$.
+
+### State Transition Probability
+
+For Markov state $s$ and successor state $s'$, the **state transition probability** is defined by, 
+
+```math
+\textit{P}_{ss'} = P[S_{t+1} = s' | S_{t} = s]
+```
+
+## Markov Decision Processes
+
+> A reinforcement learning task that satisfies the Markov property is called a Markov decision process, or MDP. If the state and action spaces are finite, then it is called a finite Markov decision process (finite MDP).
