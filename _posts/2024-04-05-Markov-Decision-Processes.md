@@ -122,3 +122,10 @@ The **action-value function** $q_{\pi}(s, a)$ is the expected return starting fr
 ```math
 q_\pi(s, a) = \mathbb{E}_\pi \left[ G_t \, \middle| \, S_t = s, A_t = a \right] = \mathbb{E}_\pi \left[ \sum_{k=0}^\infty \gamma^k R_{t+k+1} \, \middle| \, S_t = s, A_t = a \right]
 ```
+
+## References
+[1]: Sutton, R. S., & Barto, A. G. (2018). Reinforcement learning: An introduction (2nd ed.). The MIT Press.
+
+[2]: [Markov Decision Processes, Subir Varma](https://subirvarma.github.io/GeneralCognitics/Course2/Lecture2_MDPs.pdf).
+
+[3]: J. Norris, “Markov Chains,” Cambridge University Press, Cambridge, 1998.
