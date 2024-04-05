@@ -41,6 +41,37 @@ For Markov state $s$ and successor state $s'$, the **state transition probabilit
 \textit{P}_{ss'} = P[S_{t+1} = s' | S_{t} = s]
 ```
 
+The state transition matrix _P_ defines transition probabilities from all states to all successor states.
+
+```math
+\textit{P} = \begin{bmatrix} 
+    \textit{P}_{11} & \dots & \textit{P}_{1n} \\
+    \vdots & \ddots & \\
+    \textit{P}_{n1} &        & \textit{P}_{nn} 
+    \end{bmatrix}
+```
+### Example of Markov chain
+
+_Image Placeholder_
+
 ## Markov Decision Processes
 
 > A reinforcement learning task that satisfies the Markov property is called a Markov decision process, or MDP. If the state and action spaces are finite, then it is called a finite Markov decision process (finite MDP).
+
+A particular finite MDP is defined by its state and action sets and by the one-step dynamics of the environment. Given any state $s$ and action $a$, the probability of each possible pair of next state $s'$ and reward $r$ is denoted by,
+
+```math
+p(s, r|s, a) = Pr[S_{t+1} =s, R_{t+1} = r | S_{t} =s, A_{t} =a]. 
+```
+
+```math
+r(s, a) = \mathbb{E}[R_{t+1} | S_t = s, A_t = a] = \sum_{r \in \mathcal{R}} \sum_{s' \in \mathcal{S}} p(s', r|s, a)
+```
+
+```math
+p(s'|s, a) = \Pr[S_{t+1} = s' | S_t = s, A_t = a] = \sum_{r \in \mathcal{R}} p(s', r|s, a)
+```
+
+```math
+r(s, a, s') = \mathbb{E}[R_{t+1} | S_t = s, A_t = a, S_{t+1} = s'] = \frac{\sum_{r \in \mathcal{R}} r p(r, s'|s, a)}{p(s'|s, a)}
+```
