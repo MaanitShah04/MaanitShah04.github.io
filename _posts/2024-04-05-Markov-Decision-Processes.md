@@ -23,6 +23,6 @@ This distinction between what the agent knows and what it can control is a criti
 
 The agent makes its decisions as a function of a signal from the environment called the environment’s state. Ideally, a state signal should summarise past actions compactly yet in such a way that all relevant information is retained. This normally requires more than the immediate actions but never more than the complete history of all past sensations. A state signal that succeeds in retaining all relevant information is said to be **Markov**, or to have the **Markov property**.
 
-Mathematically, the **Markov property** can be expressed as, $P[S_{t+1} | S_{t}] = P[S_{t+1} | S_{1}, ..., S_{t}]$
+Mathematically, the **Markov property** can be expressed as, '''P[S_{t+1} | S_{t}] = P[S_{t+1} | S_{1}, ..., S_{t}]'''
 
 ### Markov Decision Processes
