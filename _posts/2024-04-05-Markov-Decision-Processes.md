@@ -54,6 +54,21 @@ The state transition matrix _P_ defines transition probabilities from all states
 
 _Image Placeholder_
 
+## Reward
+> All of what we mean by goals and purposes can be well thought of as the maximization of the expected value of the cumulative sum of a received scalar signal (called reward).
+
+In simpler terms, it is a numerical value given to the agent based on some action at some state in the environment.
+
+## Return
+
+If the sequence of rewards received after time step $t$ is denoted $R_{t+1}, R_{t+2}, R_{t+3}, . . .$, we seek to maximize the expected return, where the return $G_t$ is defined as some specific function of the reward sequence.
+
+```math
+G_t = R_{t+1} + R_{t+2} + R_{t+3} + · · · + R_T,\text{ where T is a final time step}
+```
+
+
+
 ## Markov Decision Processes
 
 > A reinforcement learning task that satisfies the Markov property is called a Markov decision process, or MDP. If the state and action spaces are finite, then it is called a finite Markov decision process (finite MDP).
@@ -64,14 +79,21 @@ A particular finite MDP is defined by its state and action sets and by the one-s
 p(s, r|s, a) = Pr[S_{t+1} =s, R_{t+1} = r | S_{t} =s, A_{t} =a]. 
 ```
 
+The expected rewards for state–action pairs,
+
 ```math
 r(s, a) = \mathbb{E}[R_{t+1} | S_t = s, A_t = a] = \sum_{r \in \mathcal{R}} \sum_{s' \in \mathcal{S}} p(s', r|s, a)
 ```
+
+The state-transition probabilities,
 
 ```math
 p(s'|s, a) = \Pr[S_{t+1} = s' | S_t = s, A_t = a] = \sum_{r \in \mathcal{R}} p(s', r|s, a)
 ```
 
+The expected rewards for state–action–next-state triples,
+
 ```math
 r(s, a, s') = \mathbb{E}[R_{t+1} | S_t = s, A_t = a, S_{t+1} = s'] = \frac{\sum_{r \in \mathcal{R}} r p(r, s'|s, a)}{p(s'|s, a)}
 ```
+
