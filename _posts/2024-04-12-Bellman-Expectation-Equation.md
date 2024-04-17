@@ -119,4 +119,10 @@ _EXAMPLE IMAGE_
 
 ## Bellman Optimality Equation
 
+_Back Diagram state-value_
+
+Suppose the agent is in state S, and from that state, it can take two actions (a). Instead of using the Bellman Expectation Equation to calculate the value of being in state S by taking the average of the action-values, the agent chooses the action with the greater $q_{\ast}$ value. This gives the agent the value of being in state s.
+```math
+v_{\ast}(s) = \mathop{\max}_a q_{\ast}(s, a)
+```
 
