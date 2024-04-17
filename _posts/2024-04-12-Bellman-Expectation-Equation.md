@@ -93,3 +93,30 @@ A partial ordering over policies can be defined using the concept of value funct
 ```math
 \pi \geq \pi' \text{ if } v_\pi(s) \geq v_{\pi'}(s), \forall s
 ```
+
+> Theorem:
+> 
+> For any Markov Decision Process,
+> 1. There exists an optimal policy $\pi_{\ast}$ that is better than or equal to all other policies, $\pi_{\ast} \geq \pi, \forall \pi$
+> 2. All optimal policies achieve the optimal value function, $v_{\pi_{\ast}}(s) = v_{\ast}(s)$
+> 3. All optimal policies achieve the optimal action-value function, $q_{\pi_{\ast}}(s, a) = q_{\ast}(s, a)$
+
+### Finding an Optimal Policy:
+
+An optimal policy can be found by maximising over $q_{\ast}(s, a)$,
+```math
+\pi_{\ast}(a|s) = \begin{cases}
+1 & \text{if } a = \arg\underset{a \in \mathcal{A}}\max q_*(s, a) \\
+0 & \text{otherwise}
+\end{cases}
+```
+
+- There is always a deterministic optimal policy for any MDP.
+- If we know $q_{\ast}(s,a )$, we immediately have the optimal policy.
+
+Example:
+_EXAMPLE IMAGE_
+
+## Bellman Optimality Equation
+
+
