@@ -88,3 +88,8 @@ $q_{*} (s, a)$ tells us the maximum reward that can be extracted from the system
 ## Optimal Policy
 
 In order to find an optimal policy, we have to define the notion of optimality. What does it mean for one policy to be better than another?
+
+A partial ordering over policies can be defined using the concept of value functions. The partial ordering states that one policy is better than another if the value function of the first policy is greater than or equal to the value function of the second policy for all states. This partial ordering relationship is formally expressed in the equation,
+```math
+\pi \geq \pi' \text{ if } v_\pi(s) \geq v_{\pi'}(s), \forall s
+```
