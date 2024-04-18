@@ -152,3 +152,12 @@ q_{\ast}(s, a) = R_s^a + \gamma \sum_{s' \in \mathcal{S}} P_{ss'}^a \mathop{\max
 ```
 
 _Example_
+
+## References
+[1]: Sutton, R. S., & Barto, A. G. (2018). Reinforcement learning: An introduction (2nd ed.). The MIT Press.
+
+[2]: [Markov Decision Processes, Subir Varma](https://subirvarma.github.io/GeneralCognitics/Course2/Lecture2_MDPs.pdf).
+
+[3]: [Markov Decision Processes, David Silver, UCL Course on RL](https://www.davidsilver.uk/wp-content/uploads/2020/03/MDP.pdf).
+
+[4]: J. Norris, “Markov Chains,” Cambridge University Press, Cambridge, 1998.
