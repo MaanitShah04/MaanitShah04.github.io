@@ -22,4 +22,11 @@ Markov decision processes satisfy both properties,
 Dynamic programming assumes full knowledge of the MDP. It is used for _planning_ in an MDP.
 
 For Prediction,
-- Input
+- Input: MDP $\langle S, A, \textit{P}, R, \gamma \rangle$ and policy $\pi$ **OR** MRP $\langle S, \textit{P}^{\pi}, R^{\pi}, \gamma \rangle$
+- Output: value function $v_\pi$
+
+For Control:
+- Input: MDP $\langle S, A, \textit{P}, R, \gamma \rangle$
+- Output: optimal value function $v_{\ast}$ and optimal policy $\pi_{\ast}$.
+
+## Iterative Policy Evaluation
