@@ -43,3 +43,27 @@ _Backup diagram_
 
 ### Example (Gridworld):
 
+_Image1_
+
+The gridworld consists of a 4x4 grid with 15 states, where each cell represents a state. There is one terminal state (shown as shaded squares), and the agent receives a reward of -1 until it reaches the terminal state. The agent follows a uniform random policy, where it has an equal probability of 0.25 to move in any of the four directions (up, down, left, or right) from each state. 
+```math
+\pi(n|.) = \pi(e|.) = \pi(s|.) = \pi(w|.) = 0.25
+```
+Actions that would lead the agent out of the grid leave the state unchanged. The goal is to evaluate the performance of this random policy in terms of the undiscounted episodic MDP, where the discount factor $\gamma$ is set to 1, indicating that future rewards are not discounted.
+
+_Image 2_
+
+## Policy Iteration
+
+Given an initial policy $\pi$, the process of policy improvement involves evaluating the policy and then improving it iteratively. The policy evaluation step estimates the value function $v_{\pi}(s)$ for each state s under the current policy $\pi$.
+```math
+v_{\pi}(s) = \mathbb{E}[R_{t+1} + \gamma R_{t+2} + ... | S_t = s]
+```
+
+The policy improvement step then updates the policy to a new policy $\pi'$ by acting greedily with respect to the value function $v_{\pi}$. 
+```math
+\pi' = greedy(v_{\pi})
+```
+
+In the gridworld example, the policy was optimal, $\pi' = \pi_{\ast}$. The process of policy iteration always converges to $\pi_{\ast}$.
+
