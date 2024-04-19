@@ -39,11 +39,11 @@ v_{k+1}(s) = \sum_{a \in A} \pi(a|s) \left( R_{s}^a + \gamma \sum_{s' \in S} P_{
 ```
 At each iteration $k + 1$, update $v_{k + 1}(s)$ from $v_{k}(s')$, for all states $s \in \mathcal{S}$. Here, $s'$ is a successor state of $s$.
 
-_Backup diagram_
+![ ](../images/iterativepolicyeval_backup.jpg)
 
 ### Example (Gridworld):
 
-_Image1_
+![ ](../images/gridworld.jpg)
 
 The gridworld consists of a 4x4 grid with 15 states, where each cell represents a state. There is one terminal state (shown as shaded squares), and the agent receives a reward of -1 until it reaches the terminal state. The agent follows a uniform random policy, where it has an equal probability of 0.25 to move in any of the four directions (up, down, left, or right) from each state. 
 ```math
@@ -51,7 +51,8 @@ The gridworld consists of a 4x4 grid with 15 states, where each cell represents 
 ```
 Actions that would lead the agent out of the grid leave the state unchanged. The goal is to evaluate the performance of this random policy in terms of the undiscounted episodic MDP, where the discount factor $\gamma$ is set to 1, indicating that future rewards are not discounted.
 
-_Image 2_
+![ ](../images/gridworld2.jpg)
+![ ](../images/gridworld3.jpg)
 
 ## Policy Iteration
 
@@ -65,7 +66,8 @@ The policy improvement step then updates the policy to a new policy $\pi'$ by ac
 \pi' = greedy(v_{\pi})
 ```
 
-_Diagram_
+![ ](../images/policy_iteration1.jpg)
+![ ](../images/policy_iteration2.jpg)
 
 In the gridworld example, the policy was optimal, $\pi' = \pi_{\ast}$. The process of policy iteration always converges to $\pi_{\ast}$.
 
@@ -77,7 +79,7 @@ The problem involves managing a car rental business with two locations, where ea
 
 The goal is to find an optimal policy for moving cars between the two locations to maximize the overall expected reward (revenue from rented cars).
 
-_Diagram_
+![ ](../images/carrental.jpg)
 
 The plots show the progression of value functions $(v_0, v_1, v_2)$ and intermediate policies $(\pi_0, \pi_1, \pi_2, \pi_3, \pi_4)$ during the iterations of policy evaluation and improvement.
 
@@ -155,11 +157,11 @@ v_{k + 1}(s) = \max_{a \in A} \left[R_{s}^a + \gamma \sum_{s' \in S}  P_{ss'}^a 
 ```
 At each iteration $k + 1$, update $v_{k + 1}(s)$ from $v_{k}(s')$, for all states $s \in \mathcal{S}$, using synchronous backups.
 
-_Diagram_
+![ ](../images/valiterbackup.jpg)
 
 ## Summary (Synchronous Dynamic Programming Algorithms)
 
-_Image_
+![ ](../images/summary_dynamic.jpg)
 
 ## References
 [1]: Sutton, R. S., & Barto, A. G. (2018). Reinforcement learning: An introduction (2nd ed.). The MIT Press.
