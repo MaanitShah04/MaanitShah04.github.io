@@ -115,3 +115,4 @@ Then, the Bellman optimality equation has been satisfied
 v_\pi(s) = \max_{a\in\mathcal{A}} q_\pi(s, a)
 ```
 Therefore $v_\pi(s) = v_*(s)$ for all $s \in \mathcal{S}$. So $\pi$ is an optimal policy.
+
