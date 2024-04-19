@@ -144,3 +144,28 @@ The value iteration algorithm applies these updates iteratively, starting with a
 The intuition behind value iteration is to start with the final rewards and work backwards, computing the optimal values by considering the immediate rewards and the discounted future rewards from the next states.
 
 Although derived for deterministic MDPs, value iteration can also be applied to stochastic (loopy) MDPs.
+
+### Value Iteration
+
+Problem: Find the optimal policy $\pi$
+
+We apply the Bellman Optimality Equation with iterative backups.
+```math
+v_{k + 1}(s) = \max_{a \in A} \left[R_{s}^a + \gamma \sum_{s' \in S}  P_{ss'}^a v_{k}(s')\right]
+```
+At each iteration $k + 1$, update $v_{k + 1}(s)$ from $v_{k}(s')$, for all states $s \in \mathcal{S}$, using synchronous backups.
+
+_Diagram_
+
+## Summary (Synchronous Dynamic Programming Algorithms)
+
+_Image_
+
+## References
+[1]: Sutton, R. S., & Barto, A. G. (2018). Reinforcement learning: An introduction (2nd ed.). The MIT Press.
+
+[2]: [Markov Decision Processes, Subir Varma](https://subirvarma.github.io/GeneralCognitics/Course2/Lecture2_MDPs.pdf).
+
+[3]: [Markov Decision Processes, David Silver, UCL Course on RL](https://www.davidsilver.uk/wp-content/uploads/2020/03/MDP.pdf).
+
+[4]: J. Norris, “Markov Chains,” Cambridge University Press, Cambridge, 1998.
