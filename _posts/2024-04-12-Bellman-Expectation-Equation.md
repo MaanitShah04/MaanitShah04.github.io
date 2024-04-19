@@ -119,7 +119,7 @@ _EXAMPLE IMAGE_
 
 ## Bellman Optimality Equation
 
-_Back Diagram state-value_
+![ ](../images/state_valuetree.jpg)
 
 Suppose the agent is in state S, and from that state, it can take two actions (a). Instead of using the Bellman Expectation Equation to calculate the value of being in state S by taking the average of the action-values, the agent chooses the action with the greater $q_{\ast}$ value. This gives the agent the value of being in state s.
 ```math
@@ -128,7 +128,7 @@ v_{\ast}(s) = \mathop{\max}_a q_{\ast}(s, a)
 
 Similarly,
 
-_Backup diagram action-value_
+![ ](../images/action_valuetree.jpg)
 
 Suppose the agent has taken an action a in some state s. The environment then transitions the agent to a new state s', which could be any of the possible next states. In this case, rather than using the Bellman Expectation Equation, which would involve taking the average of the values of the possible next states, the agent uses the Bellman Optimality Equation.
 ```math
@@ -136,7 +136,7 @@ q_{\ast}(s, a) = R_s^a + \gamma \sum_{s' \in \mathcal{S}} P_{ss'}^a v_{\ast}(s')
 ```
 If we connect and extend both the back-up diagrams,
 
-_extended state value backup diagram_
+![ ](../images/Extended_state_value.jpg)
 
 An agent in a particular state 's' will take an action a based on a policy that assigns weighted probabilities to the available actions. This action then leads the agent to end up in one of several possible next states s', with the probabilities of ending up in each state s determined by the weighted environment. To find the value of being in the original state s, we simply average the optimal values of all the possible next states s'. This average gives us the overall value of being in state s - it tells us how good it is for the agent to be in that state, taking into account the weighted probabilities of the available actions and the resulting next states.
 ```math
@@ -144,7 +144,7 @@ v_{\ast}(s) = \mathop{\max}_a (R_s^a + \gamma \sum_{s' \in \mathcal{S}} P_{ss'}^
 ```
 There is no dependency on the policy anymore; it is solely a function of the environment's randomness.
 
-_extended action value backup diagram_
+![ ](../images/extended_action_value.jpg)
 
 Suppose our agent is in a particular state s. The agent takes an action a in that state, which may result in the agent ending up in any of several possible next states s'. From each of these possible next states, the agent wants to identify the action with the highest $q_{\ast}$ value, i.e. the action that will maximize the expected future reward. The agent then backs this information up to the current state s, which allows the agent to determine the overall value of taking the original action a from the current state. In this way, the agent is able to choose the action that will lead to the highest expected future reward by considering the possible future states and the best actions to take in each of them.
 ```math
