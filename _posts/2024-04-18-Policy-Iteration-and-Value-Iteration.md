@@ -67,3 +67,4 @@ The policy improvement step then updates the policy to a new policy $\pi'$ by ac
 
 In the gridworld example, the policy was optimal, $\pi' = \pi_{\ast}$. The process of policy iteration always converges to $\pi_{\ast}$.
 
+
