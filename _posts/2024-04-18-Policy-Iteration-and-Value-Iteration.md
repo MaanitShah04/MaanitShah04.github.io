@@ -30,3 +30,16 @@ For Control:
 - Output: optimal value function $v_{\ast}$ and optimal policy $\pi_{\ast}$.
 
 ## Iterative Policy Evaluation
+
+How do we evaluate an arbitrary policy $\pi$?
+
+We apply the Bellman Expectation Equation with iterative backups. We calculate the value of the next state by backing up the value of the current state from the previous iteration.
+```math
+v_{k+1}(s) = \sum_{a \in A} \pi(a|s) \left( R_{s}^a + \gamma \sum_{s' \in S} P_{ss'}^{a} v_k(s') \right)
+```
+At each iteration $k + 1$, update $v_{k + 1}(s)$ from $v_{k}(s')$, for all states $s \in \mathcal{S}$. Here, $s'$ is a successor state of $s$.
+
+_Backup diagram_
+
+### Example (Gridworld):
+
