@@ -65,6 +65,53 @@ The policy improvement step then updates the policy to a new policy $\pi'$ by ac
 \pi' = greedy(v_{\pi})
 ```
 
+_Diagram_
+
 In the gridworld example, the policy was optimal, $\pi' = \pi_{\ast}$. The process of policy iteration always converges to $\pi_{\ast}$.
 
+### Example (Jack's Car Rental):
 
+The problem involves managing a car rental business with two locations, where each location has a maximum capacity of 20 cars. The states in this problem represent the number of cars available at each location. The actions involve moving up to 5 cars between the two locations overnight to rebalance the inventory based on demand. The reward is $\$10$ for each car rented (assuming a car is available at the requested location). The transitions, or the dynamics of the environment, are determined by the random returns and requests for cars at each location. These transitions follow a Poisson distribution, n returns/requests with prob $\frac{{e^{-\lambda } \lambda^n }}{{n!}}$, where:
+- At the first location, the average number of car returns and requests is 3.
+- At the second location, the average number of car requests is 4, and the average number of car returns is 2.
+
+The goal is to find an optimal policy for moving cars between the two locations to maximize the overall expected reward (revenue from rented cars).
+
+_Diagram_
+
+The plots show the progression of value functions $(v_0, v_1, v_2)$ and intermediate policies $(\pi_0, \pi_1, \pi_2, \pi_3, \pi_4)$ during the iterations of policy evaluation and improvement.
+
+The value functions are depicted as 3D surfaces, representing the expected future rewards for each combination of car counts at the two locations. The policies are visualized as 2D plots, indicating the optimal number of cars to move between locations for each state.
+
+Starting with an initial policy π0, the process alternates between evaluating the current policy to compute the value function and improving the policy greedily based on the value function.
+
+The iterations continue until the policy converges to the optimal policy $\pi^{\ast}$ that maximizes the expected rewards in the Car Rental problem.
+
+### Policy Improvement
+
+Consider a deterministic policy, $a = \pi(s). We can improve the policy by acting greedily,
+```math
+\pi'(s) = \arg\max_{a\in\mathcal{A}} q_\pi(s, a)
+```
+This improves the value from any state $s$ over one step,
+```math
+q_\pi(s, \pi'(s)) = \max_{a\in\mathcal{A}} q_\pi(s, a) \geq q_\pi(s, \pi(s)) = v_\pi(s)
+```
+It therefore improves the value function, $v_{\pi'}(s) \geq v_\pi(s)$
+```math
+\begin{align*}
+v_\pi(s) &\leq q_\pi(s, \pi'(s)) = \mathbb{E}\pi[R{t+1} + \gamma v_\pi(S_{t+1}) | S_t = s] \
+&\leq \mathbb{E}\pi[R{t+1} + \gamma q_\pi(S_{t+1},\pi'(S_{t+1})) | S_t = s] \
+&\leq \mathbb{E}\pi[R{t+1} + \gamma R_{t+2} + \gamma^2 q_\pi(S_{t+2},\pi'(S_{t+2})) | S_t = s] \
+&\leq \mathbb{E}\pi[R{t+1} + \gamma R_{t+2} + \ldots | S_t = s] = v_{\pi'}(s)
+\end{align*}
+```
+If improvements stop,
+```math
+q_\pi(s, \pi'(s)) = \max_{a\in\mathcal{A}} q_\pi(s, a) = q_\pi(s, \pi(s)) = v_\pi(s)
+```
+Then, the Bellman optimality equation has been satisfied
+```math
+v_\pi(s) = \max_{a\in\mathcal{A}} q_\pi(s, a)
+```
+Therefore $v_\pi(s) = v_*(s)$ for all $s \in \mathcal{S}$. So $\pi$ is an optimal policy.
