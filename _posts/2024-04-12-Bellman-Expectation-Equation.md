@@ -18,7 +18,7 @@ The above equation is the Bellman expectation equation for the action-value func
 
 
 
-_Back-up diagram state value_
+![ ](../images/state_valuetree.jpg)
 
 This backup diagram describes the value of being in a particular state. 
 
@@ -29,7 +29,7 @@ v(s) = R_s + \gamma \sum_{s' \in S} P_{ss'} v(s')
 
 Similarly,
 
-_backup diagram for action value_
+![ ](../images/action_valuetree.jpg)
 
 This backup diagram shows us "how good" it is to take an action in a given state under a given policy.
 
@@ -41,7 +41,7 @@ q_\pi(s, a) = R_s^a + \gamma \sum_{s' \in S} P_{ss'}^a v_\pi(s')$
 
 If we connect and extend both the back-up diagrams to further define $v_\pi (s)$,
 
-_extended state value backup diagram_
+![ ](../images/Extended_state_value.jpg)
 
 Mathematically, this can be represented as,
 ```math
@@ -54,7 +54,7 @@ _Example_
 
 Similarly, if we connect and extend both the back-up diagrams to further define $q_\pi (s, a)$,
 
-_extended action value backup diagram_
+![ ](../images/extended_action_value.jpg)
 
 Mathematically, this can be represented as,
 ```math
