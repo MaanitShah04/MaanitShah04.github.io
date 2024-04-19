@@ -116,3 +116,16 @@ v_\pi(s) = \max_{a\in\mathcal{A}} q_\pi(s, a)
 ```
 Therefore $v_\pi(s) = v_*(s)$ for all $s \in \mathcal{S}$. So $\pi$ is an optimal policy.
 
+## Value Iteration
+
+### Principle of Optimality
+
+Any optimal policy can be subdivided into two components:
+- An optimal first action $A$,
+- Followed by an optimal policy from successor state $S'$
+
+> Theorem (Principle of Optimality)
+> A policy $\pi(a|s)$ achieves the optimal value from state $s$, $v_\pi(s) = v_(s)$, if and only if
+> - For any state $s'$ reachable from $s$
+> - $\pi$ achieves the optimal value from state $s'$, $v_\pi(s') = v_(s')$
+
