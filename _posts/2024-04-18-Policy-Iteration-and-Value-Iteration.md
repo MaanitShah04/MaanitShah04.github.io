@@ -125,7 +125,22 @@ Any optimal policy can be subdivided into two components:
 - Followed by an optimal policy from successor state $S'$
 
 > Theorem (Principle of Optimality)
+> 
 > A policy $\pi(a|s)$ achieves the optimal value from state $s$, $v_\pi(s) = v_(s)$, if and only if
 > - For any state $s'$ reachable from $s$
 > - $\pi$ achieves the optimal value from state $s'$, $v_\pi(s') = v_(s')$
 
+### Deterministic Value Iteration
+
+Value iteration is a technique used to compute the optimal value function v*(s) for a given Markov Decision Process (MDP). The idea is to iteratively update the value function using the Bellman equation until convergence.
+
+If we know the solution to the subproblems $v_{\ast}(s')$, i.e., the optimal values for the next states $s'$, then the optimal value $v_{\ast}(s)$ for the current state s can be found by a one-step lookahead:
+```math
+v_{\ast}(s) \leftarrow \max_{a \in A} R^a_s + \gamma \sum_{s' \in S} P_{ss'}^a v_{\ast}(s')
+```
+
+The value iteration algorithm applies these updates iteratively, starting with an initial approximation and updating the values until convergence.
+
+The intuition behind value iteration is to start with the final rewards and work backwards, computing the optimal values by considering the immediate rewards and the discounted future rewards from the next states.
+
+Although derived for deterministic MDPs, value iteration can also be applied to stochastic (loopy) MDPs.
