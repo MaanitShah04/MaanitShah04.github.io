@@ -73,7 +73,7 @@ In the gridworld example, the policy was optimal, $\pi' = \pi_{\ast}$. The proce
 
 ### Example (Jack's Car Rental):
 
-The problem involves managing a car rental business with two locations, where each location has a maximum capacity of 20 cars. The states in this problem represent the number of cars available at each location. The actions involve moving up to 5 cars between the two locations overnight to rebalance the inventory based on demand. The reward is $\$10$ for each car rented (assuming a car is available at the requested location). The transitions, or the dynamics of the environment, are determined by the random returns and requests for cars at each location. These transitions follow a Poisson distribution, n returns/requests with prob $\frac{{e^{-\lambda } \lambda^n }}{{n!}}$, where:
+The problem involves managing a car rental business with two locations, where each location has a maximum capacity of 20 cars. The states in this problem represent the number of cars available at each location. The actions involve moving up to 5 cars between the two locations overnight to rebalance the inventory based on demand. The reward is 10 for each car rented (assuming a car is available at the requested location). The transitions, or the dynamics of the environment, are determined by the random returns and requests for cars at each location. These transitions follow a Poisson distribution, n returns/requests with prob $\frac{{e^{-\lambda } \lambda^n }}{{n!}}$, where:
 - At the first location, the average number of car returns and requests is 3.
 - At the second location, the average number of car requests is 4, and the average number of car returns is 2.
 
